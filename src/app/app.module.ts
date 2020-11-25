@@ -8,6 +8,7 @@ import { FooComponent } from './foo/foo.component';
 import { HomeComponent } from './home/home.component';
 import { DishesComponent } from './dishes/dishes.component';
 import { DishComponent } from './dish/dish.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { DishComponent } from './dish/dish.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
