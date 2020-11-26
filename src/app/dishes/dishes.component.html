@@ -1,8 +1,16 @@
-<div class="container my-3">
-<div class="row">
-
-<app-dish *ngFor="let d of dishList" [dish]="d">
-
-</app-dish>
+<div class="container my-3 align-items-center justify-content-center">
+<div class="card-deck justify-content-center">
+<app-dish *ngFor="let d of dishList" [dish]="d" (delete)="deleteDish($event)"></app-dish>
 </div>
 </div>
+<div class="row my-5 flex-column">
+
+  <button class="btn btn-outline-dark align-self-center my-5" *ngIf="!formState" (click)="showForm() ">
+    Add a new delicacy!
+  </button>
+
+</div>
+<div class="container my-lg-5">
+  <app-add-form class="align-self-center" *ngIf="formState" (event)="AddOrRemoveFormEvent($event)"></app-add-form>
+</div>
+

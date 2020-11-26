@@ -1,0 +1,32 @@
+<form  [formGroup]="registreForm">
+  <div class="form-group offset-3 col-6">
+    <label>Name:</label>
+    <input type="text" class="form-control input-group-sm" formControlName="name">
+    <div class="alert alert-danger" *ngIf="name.errors?.required && name.touched">
+      Please provide a name for the dish
+    </div>
+  </div>
+  <div class="form-group offset-3 col-6">
+    <label>Description:</label>
+    <textarea class="form-control" formControlName="description" minlength="30"></textarea>
+    <div class="alert alert-danger" *ngIf="description.errors && description.touched">
+      <div *ngIf="description.errors.required">required</div>
+      <div *ngIf="description.errors.minlength">description must have a length of at least 30</div>
+    </div>
+  </div>
+  <div class="form-group offset-3 col-6 custom-file">
+    <label>Image:</label>
+    <div class="custom-file">
+      <input type="file" class="form-control custom-file-input" id="inputGroupFile01" formControlName="image" (change)="onChange($event)">
+      <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+    </div>
+    <div class="alert alert-danger" *ngIf="image.errors?.required && image.touched">
+      Please provide a picture
+    </div>
+  </div>
+  <div class="offset-3 col-6 my-5">
+  <button class="btn btn-success" (click)='save()' [disabled]="registreForm.invalid">Add dish</button>
+  &nbsp;
+  <button type="button" class="btn btn-warning" (click)="cancel()">Cancel</button>
+  </div>
+</form>

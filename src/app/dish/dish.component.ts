@@ -1,5 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Dish} from '../model/dish';
+import {DishesService} from '../services/dishes.service';
 declare var $: any;
 @Component({
   selector: 'app-dish',
@@ -8,7 +9,9 @@ declare var $: any;
 })
 export class DishComponent implements OnInit {
   @Input() dish: Dish;
-  constructor() { }
+  @Output() delete = new EventEmitter<number>();
+  // tslint:disable-next-line:variable-name
+  constructor(private _dish: DishesService) { }
 
   ngOnInit(): void {
   }
@@ -18,5 +21,8 @@ export class DishComponent implements OnInit {
   }
   commitChanges(){
     $('#exampleModal').modal('hide');
+  }
+  deleteDish(id){
+    this.delete.emit(id);
   }
 }

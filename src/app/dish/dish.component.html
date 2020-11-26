@@ -4,11 +4,11 @@
     style="width: 18rem"
   >
     <img [src]="dish.image" class="card-img-top" alt="..." />
-    <div class="card-body">
+    <div class="card-body overflow-auto">
       <h5 class="card-title">{{ dish.nom }}</h5>
-      <p class="card-text">{{dish.description}}</p>
+      <p class="card-text text-height">{{dish.description}}</p>
       <!-- <a routerLink="detail/{{product.id}}">detail</a> -->
-      <button class="btn btn-danger" style="float: left">
+      <button class="btn btn-danger" style="float: left" (click)="deleteDish(dish.id)">
         delete
       </button>
       <button type="button" style="float: right" class="btn btn-outline-warning" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Edit

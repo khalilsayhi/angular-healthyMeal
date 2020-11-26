@@ -9,6 +9,8 @@ import { HomeComponent } from './home/home.component';
 import { DishesComponent } from './dishes/dishes.component';
 import { DishComponent } from './dish/dish.component';
 import {HttpClientModule} from '@angular/common/http';
+import { AddFormComponent } from './add-form/add-form.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,12 +19,15 @@ import {HttpClientModule} from '@angular/common/http';
     FooComponent,
     HomeComponent,
     DishesComponent,
-    DishComponent
+    DishComponent,
+    AddFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

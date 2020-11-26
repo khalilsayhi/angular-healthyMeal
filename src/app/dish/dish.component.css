@@ -1,0 +1,7 @@
+.text-height{
+  height: 120px;
+  overflow: hidden;
+}
+.text-height:hover{
+  overflow-y: auto;
+}
