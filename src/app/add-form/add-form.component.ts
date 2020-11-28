@@ -2,6 +2,7 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Dish} from '../model/dish';
 import {Observable, Subscriber} from 'rxjs';
+import {formatNumber} from '@angular/common';
 
 @Component({
   selector: 'app-add-form',
@@ -22,17 +23,20 @@ export class AddFormComponent implements OnInit {
     this.registreForm = new FormGroup({
       name: new FormControl('', Validators.required),
       description: new FormControl('', Validators.required),
-      image: new FormControl('', Validators.required)
+      image: new FormControl('', Validators.required),
+      price: new FormControl('123', [Validators.required, Validators.min(0)])
     });
   }
   get name(){return this.registreForm.get('name'); }
   get description(){return this.registreForm.get('description'); }
   get image(){return this.registreForm.get('image'); }
+  get price(){return this.registreForm.get('price'); }
 
   save(){
     this.dish.nom = this.registreForm.get('name').value;
     this.dish.description = this.registreForm.get('description').value;
     this.dish.image = this.myImage;
+    this.dish.price = this.price.value;
     this.event.emit(this.dish);
     this.registreForm.reset();
   }

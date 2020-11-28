@@ -10,6 +10,7 @@ import {Dish} from '../model/dish';
 export class DishesComponent implements OnInit {
   formState = false;
   dishList: Dish[];
+  priceMax: number;
   // tslint:disable-next-line:variable-name
   constructor(private _dish: DishesService) { }
 

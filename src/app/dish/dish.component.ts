@@ -1,6 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Dish} from '../model/dish';
 import {DishesService} from '../services/dishes.service';
+import {Router} from '@angular/router';
 declare var $: any;
 @Component({
   selector: 'app-dish',
@@ -10,18 +11,16 @@ declare var $: any;
 export class DishComponent implements OnInit {
   @Input() dish: Dish;
   @Output() delete = new EventEmitter<number>();
+  @Input() priceInput: number;
   // tslint:disable-next-line:variable-name
-  constructor(private _dish: DishesService) { }
+  constructor(private _router: Router) { }
 
   ngOnInit(): void {
   }
-
-  showEditModal(){
-
+  goToEdit(){
+      this._router.navigate([`edit/${this.dish.id}`]);
   }
-  commitChanges(){
-    $('#exampleModal').modal('hide');
-  }
+
   deleteDish(id){
     this.delete.emit(id);
   }
