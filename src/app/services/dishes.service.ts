@@ -13,11 +13,14 @@ export class DishesService {
   getDishes(): Observable<Dish[]>{
     return this.http.get<Dish[]>(this.url);
   }
+  getDishById(id: number): Observable<Dish>{
+    return this.http.get<Dish>(`${this.url}/${id}`);
+  }
   addDish(d: Dish){
     return this.http.post(this.url, d);
   }
   modifyDish(d: Dish){
-    return this.http.put(this.url, d);
+    return this.http.put(`${this.url}/${d.id}`, d);
   }
   deleteDish(id: number){
     return this.http.delete(`${this.url}/${id}`);

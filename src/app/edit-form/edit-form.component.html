@@ -1,2 +1,43 @@
-
-
+<div class="container">
+<form #f="ngForm">
+  <div class="form-group">
+    <label>Name:</label>
+    <input type="text" name="name" class="form-control" [(ngModel)]="dish.nom" #n="ngModel" required minlength="3" pattern="[a-zA-Z]+$">
+  </div>
+  <div class="alert alert-danger" *ngIf="n.touched && n.invalid">
+    <div *ngIf="n.errors.required">Name is required</div>
+    <div *ngIf="n.errors.minlength"> min length est 3  </div>
+  </div>
+  <div class="alert alert-danger" *ngIf="n.errors?.pattern">
+    a dish-name must only have letters
+  </div>
+  <div class="form-group">
+    <label>Price:</label>
+    <input type="number" name="price" class="form-control" [(ngModel)]="dish.price" #p="ngModel" required>
+  </div>
+  <div class="alert alert-danger" *ngIf="p.touched && p.invalid">
+    price is required
+  </div>
+  <div class="alert alert-danger" *ngIf="p.value<0 || p.value==0">
+   price must be positive
+  </div>
+  <div class="form-group">
+    <label>description:</label>
+    <textarea name="description" class="form-control" [(ngModel)]="dish.description" #d="ngModel" required minlength="30"></textarea>
+  </div>
+  <div class="alert alert-danger" *ngIf="d.touched && d.invalid">
+    description is required
+  </div>
+  <div class="alert alert-danger" *ngIf="d.errors?.minlength">
+    description must be at least 30
+  </div>
+  <div class="form-group custom-file">
+    <label>Image:</label>
+    <div class="custom-file">
+      <input type="file" class="form-control custom-file-input" id="inputGroupFile01" name="image" (change)="onChange($event)">
+      <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+    </div>
+  </div>
+  <button class="btn btn-success mt-4" [disabled]="f.invalid" (click)="commitEdit()">save</button>
+</form>
+</div>
