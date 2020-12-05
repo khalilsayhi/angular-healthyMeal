@@ -12,6 +12,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { AddFormComponent } from './add-form/add-form.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { EditFormComponent } from './edit-form/edit-form.component';
+import { DishDetailComponent } from './dish-detail/dish-detail.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { EditFormComponent } from './edit-form/edit-form.component';
     DishesComponent,
     DishComponent,
     AddFormComponent,
-    EditFormComponent
+    EditFormComponent,
+    DishDetailComponent
   ],
   imports: [
     BrowserModule,

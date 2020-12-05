@@ -5,7 +5,8 @@
   >
     <img [src]="dish.image" class="card-img-top" alt="..." />
     <div class="card-body overflow-auto">
-      <h5 class="card-title">{{ dish.nom }}</h5>
+      <h5 class="card-title"><a [routerLink]="['detail', dish.id]">{{dish.nom}}</a></h5>
+
       <p class="card-text text-height">{{dish.description}}</p>
       <!-- <a routerLink="detail/{{product.id}}">detail</a> -->
       <button class="btn btn-danger" style="float: left" (click)="deleteDish(dish.id)">
