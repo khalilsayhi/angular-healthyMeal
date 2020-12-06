@@ -5,6 +5,7 @@ import {HomeComponent} from './home/home.component';
 import {DishesComponent} from './dishes/dishes.component';
 import {EditFormComponent} from './edit-form/edit-form.component';
 import {DishDetailComponent} from './dish-detail/dish-detail.component';
+import {SignInComponent} from './sign-in/sign-in.component';
 
 
 const routes: Routes = [
@@ -13,6 +14,7 @@ const routes: Routes = [
   {path: 'Dishes', component : DishesComponent},
   {path: 'edit/:id', component : EditFormComponent},
   {path: 'Dishes/detail/:id', component : DishDetailComponent},
+  {path: 'SignIn', component : SignInComponent}
 ];
 
 @NgModule({

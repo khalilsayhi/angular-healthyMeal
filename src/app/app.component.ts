@@ -21,4 +21,7 @@ export class AppComponent implements OnInit{
     }
     else { return false; }
   }
+  logout(){
+    localStorage.removeItem('loggedIn');
+  }
 }

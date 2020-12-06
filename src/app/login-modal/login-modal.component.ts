@@ -45,12 +45,11 @@ export class LoginModalComponent implements OnInit {
     else {
       this._USERS.addUser(this.user).subscribe(() =>
       {
-      $('#exampleModal').modal('hide'); this.signupForm.reset(); this.user = new User();
+      $('#exampleModal').modal('hide'); this.signupForm.reset(); this.user = new User(); this.error = '';
       });
     }
   }
   verifyUserExistance(user: User){
-    console.log(this.userList);
     for (const item of this.userList){
       if (item.email === user.email){
         return true;

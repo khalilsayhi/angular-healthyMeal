@@ -14,6 +14,9 @@
       <li class="nav-item active">
         <a class="nav-link" routerLink="/Dishes"><i class="fa fa-cutlery"></i>Dishes</a>
       </li>
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/Home" (click)="logout()"><i class="fa fa-sign-out"></i>Logout</a>
+      </li>
     </ul>
   </div>
 </nav>
@@ -32,8 +35,11 @@
       <li class="nav-item active">
         <a class="nav-link" routerLink="/Home"><i class="fa fa-home"></i>Home</a>
       </li>
-      <li class="nav-item active">
+      <li class="nav-item">
         <a class="nav-link"><i class="fa fa-cutlery"></i><app-login-modal></app-login-modal></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/SignIn"><i class="fa fa-sign-in"></i>Signin</a>
       </li>
     </ul>
   </div>
@@ -41,7 +47,7 @@
 
 <router-outlet></router-outlet>
 
-<footer class="footer">
+<footer class="footer page-footer">
   <div class="footer-left col-md-4 col-sm-6">
     <p class="about">
       <span> About the company</span> Ut congue augue non tellus bibendum, in varius tellus condimentum. In scelerisque nibh tortor, sed rhoncus odio condimentum in. Sed sed est ut sapien ultrices eleifend. Integer tellus est, vehicula eu lectus tincidunt,

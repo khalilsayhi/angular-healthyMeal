@@ -13,6 +13,7 @@ import { AddFormComponent } from './add-form/add-form.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { EditFormComponent } from './edit-form/edit-form.component';
 import { DishDetailComponent } from './dish-detail/dish-detail.component';
+import { SignInComponent } from './sign-in/sign-in.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { DishDetailComponent } from './dish-detail/dish-detail.component';
     DishComponent,
     AddFormComponent,
     EditFormComponent,
-    DishDetailComponent
+    DishDetailComponent,
+    SignInComponent
   ],
   imports: [
     BrowserModule,
