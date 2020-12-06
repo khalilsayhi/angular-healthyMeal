@@ -27,7 +27,7 @@
   <div class="form-group offset-3 col-6 custom-file">
     <label>Image:</label>
     <div class="custom-file">
-      <input type="file" class="form-control custom-file-input" id="inputGroupFile01" formControlName="image" (change)="onChange($event)">
+      <input type="file" class="form-control custom-file-input" id="inputGroupFile01"  accept="image/png, image/jpeg" formControlName="image" (change)="onChange($event)">
       <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
     </div>
     <div class="alert alert-danger" *ngIf="image.errors?.required && image.touched">
