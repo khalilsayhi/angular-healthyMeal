@@ -14,6 +14,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { EditFormComponent } from './edit-form/edit-form.component';
 import { DishDetailComponent } from './dish-detail/dish-detail.component';
 import { SignInComponent } from './sign-in/sign-in.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { SignInComponent } from './sign-in/sign-in.component';
     AddFormComponent,
     EditFormComponent,
     DishDetailComponent,
-    SignInComponent
+    SignInComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

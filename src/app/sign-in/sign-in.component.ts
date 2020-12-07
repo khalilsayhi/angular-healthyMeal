@@ -40,5 +40,8 @@ export class SignInComponent implements OnInit {
     }
     return false;
   }
+  dismissError(){
+    this.error = false;
+  }
 
 }

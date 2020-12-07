@@ -100,7 +100,7 @@
 }
 
 .footer .footer-center p a {
-  color: #0099ff;
+  color: #2d5e88;
   text-decoration: none;
 }
 
@@ -140,7 +140,7 @@
 }
 
 .footer .name {
-  color: #0099ff;
+  color: #2d5e88;
   font-size: 14px;
   font-weight: normal;
   margin: 0;
@@ -175,7 +175,7 @@ i {
 }
 /*----------multi-level-accordian-menu------------*/
 .navbar-logo{
-  padding: 15px;
+  padding: 14px;
   color: #fff;
 }
 .navbar-mainbg{

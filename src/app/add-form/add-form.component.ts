@@ -21,7 +21,7 @@ export class AddFormComponent implements OnInit {
   ngOnInit(): void {
     this.dish = new Dish();
     this.registreForm = new FormGroup({
-      name: new FormControl('', Validators.required),
+      name: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z_]+( [a-zA-Z_]+)*$')]),
       description: new FormControl('', Validators.required),
       image: new FormControl('', Validators.required),
       price: new FormControl('123', [Validators.required, Validators.min(0)])

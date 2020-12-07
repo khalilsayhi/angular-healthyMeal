@@ -22,7 +22,7 @@ export class LoginModalComponent implements OnInit {
     this.user = new User();
     this._USERS.getUsers().subscribe(data => this.userList = data);
     this.signupForm = new FormGroup({
-      email: new FormControl('', Validators.required),
+      email: new FormControl('', [Validators.required, Validators.pattern('^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$')]),
       password: new FormControl('', Validators.required)
     });
   }
@@ -45,7 +45,7 @@ export class LoginModalComponent implements OnInit {
     else {
       this._USERS.addUser(this.user).subscribe(() =>
       {
-      $('#exampleModal').modal('hide'); this.signupForm.reset(); this.user = new User(); this.error = '';
+      $('#exampleModal').modal('hide'); this.signupForm.reset(); this.user = new User(); this.error = ''; this.userList.push(this.user);
       });
     }
   }
